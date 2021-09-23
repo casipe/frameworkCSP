@@ -21,21 +21,21 @@ $texto = 	'<br><b>Assunto:</b> ' . $_POST['assunto'].
 
 $email = new Email();	
 
-$email->emailRemetente = 'contato@querovendermais.com.br';
+$email->emailRemetente = 'contato@domain.com.br';
 
 $email->emailResponder = $_POST['email'];
 
-$email->servidorSmtp = 'mail.querovendermais.com.br';
+$email->servidorSmtp = 'mail.domain.com.br';
 $email->portaSmtp = '25';
-$email->userSmtp = 'contato@querovendermais.com.br';
-$email->passwdSmtp = 'csp@825082';
+$email->userSmtp = 'contato@domain.com.br';
+$email->passwdSmtp = '';
 	
 $email->emailNome = $_POST['nome'];
-$email->emailAssunto = 'CONTATO - Quero Vender Mais';		
+$email->emailAssunto = 'CONTATO';		
 $email->emailTexto = $texto;
 				
 
-$emailDestino = 'querovendermaisbr@gmail.com';
+$emailDestino = 'email@email.com';
 if($email->enviarEmail($emailDestino))
 	Header("location:./contato.php?success=1");
 else
